@@ -1,0 +1,31 @@
+Maven notes O. Danilchyk
+Creating our maven project using Command line.
+1. open Command app(Terminal,Powershell), navigate where you want to create a project. ( cd )
+2. mkdir *nameOfYourFolder* -> Create a main directory(folder) when your Project will be created.
+3. cd **nameOfYourFolder*  -> going inside of our folder.
+4. mvn archetype:generate  -> choosing template, what kind of web app we are building. ( just hit ENTER).
+5.choosing latest version (just hit ENTER).
+6.groupID - this is similar to a package name that you create for your clients company  Exmpl: com.calculator
+7.artifactID - similar to a class name, name for the complete application that we are creating. (MavenCalculator)
+8.version default ( just ENTER)
+9.package default ( just ENTER)
+10. confirmation ( type y + ENTER)
+<<<Project created! Now we have POM.xml and src folder -> which has MAIN and TEST folders,  which is very convinient that we can have our Java classes in the MAIN folder, we can use a Test folder for our test cases.>>>
+MAVEN HAS DONE ALL THIS FOR US.
+NOW LETS PREPATE OUR PROJECT FOR ECLIPSE ( cause eclipse has certain configurations that need to be followed by project, maven help us to do that, i just show you how to use maven doing that, eclipse can do it itself, but we practicing)
+                             
+                               mvn eclipse:eclipse
+Next lets go to ECLIPSE:
+File -> Import -> Existing Maven Project -> Browse (navigate to created folder) -> Finish.
+<<<Now we can see our project in Eclipse.>>>
+Lifecycles that Maven does ( PHASES) in same order from top to bottom:
+1.VALIDATE - the first phase, checks if everything in place, POM is in place, configuration is proper, all the code in proper way.
+2.COMPILE - in order to run a phase,  TYPE in a command line mvn and phase name ( mvn compile ).  it looks if POM in same directory, CREATES target directory and in a srs directory converts .java files to .class files.
+3.TEST - Runs test cases. automaticly knows that there is a test cases in my Java class, it automaticly goes pulls and executes my testcases.
+4. PACKAGE- ((reminder :slightly_smiling_face: -> it runs all previous phases)), if there is bug in a test phase it will let us know. it packages all the class files., it ends up in JAR file or different depending on what kind of web application we choosed to build.( remember? right after mvn archetype:generate ).
+5. INSTALL - AFTER all steps done again (some steps might be skipped like compile but still validates,  makes sure all files are ready) it publishes our  JARS to local repository. (which is .m2 folder).
+6.DEPLOY - it deploys your JAR file to REMOTE repository.
+SUMMARY (Power of MAVEN) :
+it has nothing to do with git or GitHub, yes it is also a command line tool, but it has  different idea. It is a BUILD tool, that automates some processes of building web application.
+When we are creating a normal project witch is not a maven project that lets say needs selenium and junit, we need to download all the JAR files which are related to selenium, junit, install it on our machine and use it.
+When we go to our friend machine and try to use our project it wont work, again we need to download and install those on his machine. BUT POWER of MAVEN, when we are creating a project , all we need to do is add all those dependencies to POM.xml, and when we need to run this project in our friends machine they just need to install maven and use OUR pom.xml file.

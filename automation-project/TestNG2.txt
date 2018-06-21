@@ -1,0 +1,81 @@
+//input[@att='abc']
+
+input[attr='abc']
+
+
+<input type="submit" class="nav-input" value="Go" tabindex="20">
+
+//input[@class='nav-input']
+
+
+input.nav-input
+___
+
+1. we can find elements based on some other elements. How to find the second help link on amaonz home  page
+
+<div class="navFooterLinkCol navAccessibility">
+
+    XPATH example
+    //div[@class='navFooterVerticalColumn navAccessibility']//a[.='Help']
+
+    //div[@class='navFooterVerticalColumn navAccessibility'] --> selenoum will find this element first
+
+    //a[.='Help']  --> sleneium will look for the help only among the descendants of the first element
+
+CSS
+    # --> id
+    . --> class
+
+
+        //div[@class='navFooterVerticalColumn navAccessibility']//a[value='Help']
+
+
+    div.navFooterVerticalColumn.navAccessibility a[value='Help']  
+
+2.     <input id="submit" class="nav-input" value="Go" tabindex="20">
+
+    By.id('submit')
+
+    //input[@id='asdfasd']
+
+    input#submit
+
+    input.nav-input
+
+    input#submit.nav-input
+
+
+3. //div[@class='navFooterVerticalColumn navAccessibility']
+
+    
+    By.classname("navFooterVerticalColumn navAccessibility")  --> this will not work . By.className only works with classes without space.
+
+
+4. search by index 
+How to find the second Help link on amaonz home  page
+
+    1. write an xpath that matches multiple elements on the page one of which we are trying to find //a[.='Help']   --> matches two help links  on the amazon page
+    2. wrap the xpath in () and add index
+
+        (//a[.='Help'])   -- > returns all the mathcing elements
+
+        (//a[.='Help'])[1]   ---> returns the first Help link on the page 
+        (//a[.='Help'])[2]   ---> returns the second Help link on the page
+
+
+
+5. use multiple attributes
+
+
+<input id="submit" class="nav-input" value="Go" tabindex="20">
+
+
+    //input[@type='submit'][@class='nav-input']
+    //input[@type='submit' and @class='nav-input']
+
+    input#submit.nav-input
+
+6. by text
+
+in xpath, . means text, case senstitivv
+//a[.='Help']    --> any link that has text Help

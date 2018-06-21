@@ -1,0 +1,98 @@
+
+//*[@id="s_exterieur_x_MXRD"]/span/span
+
+
+<input type="text" id="u_0_c">
+
+//input[@id='u_0_c']
+
+u_0_c --> dynamic id. last charachter changes every time
+
+u_0_ --. fixed
+
+
+//E[starts-with(@A, 't')]
+
+xpath ---> //input[starts-with(@id, 'u_0_')]
+
+E[A^='t']
+
+css --> input[id^='u_0_']
+
+
+<li id="s_exterieur_x_MXRD" data-link-id="MXRD" data-price="$3,750" class="selected"><span class="wheel-option img-wrapper" style="max-width: 5.9375rem;">
+
+li[id^='_MXRD']
+
+
+____
+
+
+If you do something twice, write a method for it.
+'MehMet Gunduz'
+
+
+Single responsibility principle
+
+
+Code is not formatted
+
+CMD+SHIFT+F
+CTRL+SHIFT+F
+
+Creating methods with wrong parameters
+
+___
+
+
+Unit testing --> testing the application code. done by developers.
+
+
+Junit and TestNG are the unit testing tools for java.
+
+Junit and TestNG are tools the same thing. people use one or another. Companies use Junit or TestNG.
+
+___
+
+Automation testers also use unit testing tools for testing the UI. Selenium does the browser automation part, unit testing tools are used for verificarions and reporting.
+
+
+assertions --> methods in testng used to doing verification, assertions
+
+
+Assert --> class that contains assertion methods
+
+assertEquals --> verifies if two arguments are equal
+
+
+// if you dont have the TEstNG option
+// Help --> Eclipse Marketplace
+// search for "testng"
+// click install and follow all the step,
+// agree to everything while installing
+
+@Test --> annotation that indicates a test. method with @Test is a test
+
+@Ignore --> testcase with this tag will be ignored, will not run
+
+@BeforeMethod ---> runs before every method in this class
+
+@AfterMethod ---> runs after every method in this class, no matter the test is passing or failing
+
+@BeforeClass --> runs once before everything in this class
+
+@AfterClass --> runs once after everything in this class
+
+assertTrue --> asserts the arguments is true
+
+
+if assertion fails, the rest of the @Test method will not run
+
+
+Test Case 1
+Go to amazon
+search for something
+
+Test Case 2
+Go to Google
+Search for something
