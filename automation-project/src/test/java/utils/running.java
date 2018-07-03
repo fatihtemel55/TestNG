@@ -1,6 +1,7 @@
 package utils;
 
 import java.awt.List;
+import java.util.ArrayList;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -34,7 +35,7 @@ public class running {
         //print all the available options
         // returns a list of all the options(selected and not selected everything
         
-        List<WebElement> options = list.getOptions("//input");
+        ArrayList<WebElement> options = (ArrayList<WebElement>) list.getOptions();
         System.out.println("------------");
        for (WebElement webElement : options) {
 		System.out.println(webElement.getText());
